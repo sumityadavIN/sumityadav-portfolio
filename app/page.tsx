@@ -51,7 +51,7 @@ export default async function HomePage() {
 
       {/* ABOUT */}
       <section className="py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500">
+        <h2 className="text-lg font-medium tracking-tight text-zinc-700 dark:text-zinc-300">
           About
         </h2>
 
@@ -74,7 +74,7 @@ export default async function HomePage() {
         
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/sumityadavIN"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-900 hover:underline dark:text-zinc-100"
@@ -85,7 +85,7 @@ export default async function HomePage() {
             <span className="text-zinc-400">·</span>
         
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/sumityadav96/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-900 hover:underline dark:text-zinc-100"
@@ -96,7 +96,7 @@ export default async function HomePage() {
             <span className="text-zinc-400">·</span>
         
             <a
-              href="https://x.com/yourusername"
+              href="https://x.com/sumityadav_me"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-900 hover:underline dark:text-zinc-100"
@@ -107,7 +107,7 @@ export default async function HomePage() {
             <span className="text-zinc-400">·</span>
         
             <a
-              href="mailto:youremail@example.com"
+              href="mailto:contact@sumityadav.me"
               className="text-zinc-900 hover:underline dark:text-zinc-100"
             >
               Email
