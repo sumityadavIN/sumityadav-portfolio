@@ -25,7 +25,7 @@ export default function RootLayout({
               {/* Logo */}
                   <Link href="/" className="flex items-center gap-2">
                     <Image
-                      src="https://sanatantales.com/wp-content/uploads/2022/11/OM_Red_Orange_Back.jpg"
+                      src="/logo.jpg"
                       alt="Sumit logo"
                       width={32}
                       height={32}
