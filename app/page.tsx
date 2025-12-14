@@ -7,8 +7,8 @@ export default function HomePage() {
         Hi, I’m Sumit 👋
       </h1>
 
-      <p className="text-xl text-gray-600 max-w-2xl mb-8">
-        I build software, explore systems and AI, and write about what I learn.
+      <p className="text-xl text-gray-600 mb-8">
+        Personal portfolio and blog about software, systems, and learning.
       </p>
 
       <div className="flex gap-4">
@@ -17,13 +17,6 @@ export default function HomePage() {
           className="rounded bg-black px-6 py-3 text-white"
         >
           Read Blog
-        </Link>
-
-        <Link
-          href="/projects"
-          className="rounded border px-6 py-3"
-        >
-          View Projects
         </Link>
       </div>
     </main>
