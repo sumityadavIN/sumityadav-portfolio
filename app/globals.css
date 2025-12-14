@@ -10,6 +10,10 @@ h1, h2, h3 {
   @apply tracking-tight;
 }
 
+hr {
+  @apply border-gray-200 dark:border-gray-800;
+}
+
 .prose {
   @apply prose-neutral;
 }
