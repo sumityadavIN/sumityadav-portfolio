@@ -17,7 +17,7 @@ export default async function HomePage() {
   });
 
   return (
-    <main className="mx-auto max-w-4xl px-6">
+    <main className="mx-auto max-w-6xl px-8">
       {/* HERO */}
       <section className="pt-24 pb-20">
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
