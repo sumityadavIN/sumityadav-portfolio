@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         
           <header className="border-b border-zinc-200 dark:border-zinc-800">
-            <nav className="mx-auto max-w-4xl px-6 py-4 flex items-center">
+            <nav className="mx-auto max-w-6xl px-8 py-4 flex items-center">
               {/* Logo */}
                   <Link href="/" className="flex items-center gap-2">
                     <Image
@@ -61,12 +61,12 @@ export default function RootLayout({
           <main className="mx-auto max-w-4xl px-6">
             {children}
           </main>
-<footer className="border-t border-zinc-200 dark:border-zinc-800">
-  <div className="mx-auto max-w-4xl px-6 py-10 flex items-center justify-between text-sm text-zinc-600 dark:text-zinc-400">
-    <span>© {new Date().getFullYear()} Sumit</span>
-    <ThemeToggle />
-  </div>
-</footer>
+    <footer className="border-t border-zinc-200 dark:border-zinc-800">
+        <div className="mx-auto max-w-6xl px-8 py-10 flex items-center justify-between">
+          <span>© {new Date().getFullYear()} Sumit</span>
+          <ThemeToggle />
+        </div>
+    </footer>
 
 
         
