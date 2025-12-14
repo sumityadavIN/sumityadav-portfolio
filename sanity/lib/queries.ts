@@ -32,3 +32,14 @@ export const postQuery = defineQuery(`
     ${postFields}
   }
 `);
+
+export const latestPostsQuery = `
+  *[_type == "post" && defined(slug.current)]
+  | order(date desc)[0...3] {
+    _id,
+    title,
+    "slug": slug.current,
+    date,
+    excerpt
+  }
+`
