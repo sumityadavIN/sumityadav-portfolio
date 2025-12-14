@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
         <header className="border-b">
           <nav className="py-4 flex gap-6">
             <Link href="/">Home</Link>
