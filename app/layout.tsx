@@ -41,6 +41,14 @@ export default function RootLayout({
             {children}
           </main>
       </body>
+      
+      <footer className="mx-auto max-w-4xl px-6 py-10 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+          <span>
+            © {new Date().getFullYear()} Sumit
+          </span>
+        
+          <ThemeToggle />
+        </footer>
     </html>
   )
 }
