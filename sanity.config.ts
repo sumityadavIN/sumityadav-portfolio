@@ -38,6 +38,7 @@ export default defineConfig({
       // Documents
       post,
       author,
+      project,
     ],
   },
   plugins: [
