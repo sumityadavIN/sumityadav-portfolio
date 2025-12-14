@@ -21,3 +21,8 @@ hr {
 .prose {
   @apply prose-neutral dark:prose-invert;
 }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
