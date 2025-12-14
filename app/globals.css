@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-gray-900 leading-relaxed;
+}
+
+h1, h2, h3 {
+  @apply tracking-tight;
+}
+
+.prose {
+  @apply prose-neutral;
+}
