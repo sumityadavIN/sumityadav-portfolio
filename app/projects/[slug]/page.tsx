@@ -1,6 +1,8 @@
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { projectBySlugQuery } from "@/sanity/lib/queries";
 import PortableText from "@/app/blog/portable-text";
+import Link from "next/link";
+
 
 export default async function ProjectPage({ params }: any) {
   const project = await sanityFetch({
