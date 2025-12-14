@@ -2,6 +2,7 @@ import './globals.css'
 import Link from 'next/link'
 import ThemeToggle from "./components/theme-toggle";
 import MobileMenu from "./components/mobile-menu";
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -15,12 +16,16 @@ export default function RootLayout({
           <header className="border-b border-zinc-200 dark:border-zinc-800">
             <nav className="mx-auto max-w-4xl px-6 py-4 flex items-center">
               {/* Logo */}
-              <Link
-                href="/"
-                className="font-semibold tracking-tight text-lg"
-              >
-                Sumit
-              </Link>
+                  <Link href="/" className="flex items-center gap-2">
+                    <Image
+                      src="/logo.jpg"
+                      alt="Sumit logo"
+                      width={32}
+                      height={32}
+                      className="rounded-sm"
+                      priority
+                    />
+                  </Link>
           
               {/* Desktop nav */}
               <div className="ml-auto hidden md:flex gap-6 text-sm">
