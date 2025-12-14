@@ -8,10 +8,12 @@ body {
   text-rendering: optimizeLegibility;
     font-family: var(--font-inter), system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
+    @apply leading-relaxed;
 }
 
 h1, h2, h3 {
   @apply tracking-tight;
+    @apply font-semibold leading-tight;
 }
 
 hr {
