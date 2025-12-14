@@ -67,7 +67,7 @@ export default async function HomePage() {
 
 
          {/* Social  */}   
-        <section className="mt-10 mb-10">
+        <section className="mt-10 pb-20">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Find me on
           </p>
@@ -118,13 +118,7 @@ export default async function HomePage() {
         {/* DIVIDER */}
       <hr className="border-gray-200 dark:border-gray-800" />
       
-        {/* DIVIDER */}
-      <hr className="border-gray-200 dark:border-gray-800" />
 
-      <p>
-        
-        
-        <p/>
     </main>
   );
 }
