@@ -9,8 +9,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
-        <header className="border-b border-gray-200 dark:border-gray-800">
+      <body className="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+        <header className="border-b border-zinc-200 dark:border-zinc-800">
               <nav className="mx-auto max-w-4xl px-6 py-4 flex items-center">
                 {/* Logo (left) */}
                 <Link
@@ -42,7 +42,7 @@ export default function RootLayout({
             {children}
           </main>
 
-         <footer className="mx-auto max-w-4xl px-6 py-10 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+         <footer className="border-t border-zinc-200 dark:border-zinc-800">
           <span>
             © {new Date().getFullYear()} Sumit
           </span>
