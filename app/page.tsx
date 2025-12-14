@@ -51,7 +51,7 @@ export default async function HomePage() {
 
       {/* ABOUT */}
       <section className="py-20">
-          <h2 className="text-xl font-medium tracking-tight text-zinc-700 dark:text-zinc-300">
+          <h2 className="text-xl font-semibold tracking-tight text-zinc-700 dark:text-zinc-300">
             About
           </h2>
 
@@ -67,7 +67,7 @@ export default async function HomePage() {
 
 
          {/* Social  */}   
-        <section className="mt-10 pb-20">
+        <section className="mt-10 mb-10 pb-20">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Find me on
           </p>
