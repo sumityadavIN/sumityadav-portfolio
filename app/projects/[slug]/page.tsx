@@ -18,7 +18,14 @@ export default async function ProjectPage({ params }: any) {
 
   return (
     <main className="mx-auto max-w-3xl px-6 py-20">
-      <header className="mb-12">
+    <header className="mb-12">
+        <Link
+          href="/projects"
+          className="mb-6 inline-block text-sm underline text-gray-500"
+        >
+          ← Back to projects
+        </Link>
+      
         <h1 className="text-4xl font-bold mb-4">
           {project.title}
         </h1>
