@@ -67,7 +67,7 @@ export default async function HomePage() {
 
 
          {/* Social  */}   
-        <section className="mt-10">
+        <section className="mt-10 mb-10">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             Find me on
           </p>
