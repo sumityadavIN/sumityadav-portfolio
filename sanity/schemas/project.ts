@@ -1,39 +1,53 @@
-import {DocumentIcon} from '@sanity/icons'
-import {defineField, defineType} from 'sanity'
+import { defineType, defineField } from 'sanity'
 
-export const projectType = defineType({
+export default defineType({
   name: 'project',
-  title: 'Project',
+  title: 'Portfolio Project',
   type: 'document',
-  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'title',
+      title: 'Project Title',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
+        maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     }),
+
     defineField({
-      name: 'image',
+      name: 'coverImage',
+      title: 'Cover Image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
     }),
+
     defineField({
-      name: 'details',
+      name: 'summary',
+      title: 'Short Summary',
+      type: 'text',
+      rows: 3,
+    }),
+
+    defineField({
+      name: 'content',
+      title: 'Project Content',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{ type: 'block' }], // rich text
     }),
+
     defineField({
-      name: 'link',
-      title: 'Project Link',
-      type: 'url',
+      name: 'publishedAt',
+      title: 'Published At',
+      type: 'datetime',
     }),
   ],
 })
