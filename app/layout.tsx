@@ -16,8 +16,9 @@ export default function RootLayout({
             <Link href="/projects">Projects</Link>
           </nav>
         </header>
-
-        <main>{children}</main>
+          <main className="mx-auto max-w-4xl px-6">
+            {children}
+          </main>
       </body>
     </html>
   )
