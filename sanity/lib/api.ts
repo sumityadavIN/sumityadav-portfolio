@@ -1,33 +1,17 @@
-/**
- * As this file is reused in several other files, try to keep it lean and small.
- * Importing other npm packages here could lead to needlessly increasing the client bundle size, or end up in a server-only function that don't need it.
- */
+// sanity/lib/api.ts
 
-function assertValue<T>(v: T | undefined, errorMessage: string): T {
-  if (v === undefined) {
-    throw new Error(errorMessage);
-  }
+export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET |
 
-  return v;
-}
+| 'production'
 
-export const dataset = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_DATASET,
-  "Missing environment variable: NEXT_PUBLIC_SANITY_DATASET",
-);
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID |
 
-export const projectId = assertValue(
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  "Missing environment variable: NEXT_PUBLIC_SANITY_PROJECT_ID",
-);
+| 'peswtk04'
 
-/**
- * see https://www.sanity.io/docs/api-versioning for how versioning works
- */
-export const apiVersion =
-  process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-02-28";
+// This tells the computer to use the current date for the API version
+export const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION |
 
-/**
- * Used to configure edit intent links, for Presentation Mode, as well as to configure where the Studio is mounted in the router.
- */
-export const studioUrl = "/studio";
+| '2024-03-18'
+
+// This helps load images faster
+export const useCdn = false
