@@ -51,9 +51,9 @@ export default async function HomePage() {
 
       {/* ABOUT */}
       <section className="py-20">
-        <h2 className="text-lg font-medium tracking-tight text-zinc-700 dark:text-zinc-300">
-          About
-        </h2>
+          <h2 className="text-xl font-medium tracking-tight text-zinc-700 dark:text-zinc-300">
+            About
+          </h2>
 
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           I’m interested in building reliable systems, understanding how
