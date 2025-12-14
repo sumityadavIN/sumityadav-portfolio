@@ -11,14 +11,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         
           <header className="border-b border-zinc-200 dark:border-zinc-800">
             <nav className="mx-auto max-w-4xl px-6 py-4 flex items-center">
               {/* Logo */}
                   <Link href="/" className="flex items-center gap-2">
                     <Image
-                      src="/logo.jpg"
+                      src="https://sanatantales.com/wp-content/uploads/2022/11/OM_Red_Orange_Back.jpg"
                       alt="Sumit logo"
                       width={32}
                       height={32}
@@ -54,14 +54,13 @@ export default function RootLayout({
           <main className="mx-auto max-w-4xl px-6">
             {children}
           </main>
+<footer className="border-t border-zinc-200 dark:border-zinc-800">
+  <div className="mx-auto max-w-4xl px-6 py-10 flex items-center justify-between text-sm text-zinc-600 dark:text-zinc-400">
+    <span>© {new Date().getFullYear()} Sumit</span>
+    <ThemeToggle />
+  </div>
+</footer>
 
-         <footer className="border-t border-zinc-200 dark:border-zinc-800">
-          <span>
-            © {new Date().getFullYear()} Sumit
-          </span>
-        
-          <ThemeToggle />
-        </footer>
 
         
       </body>
