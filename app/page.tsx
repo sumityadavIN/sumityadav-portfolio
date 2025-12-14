@@ -49,7 +49,7 @@ export default async function HomePage() {
             {posts.map((post) => (
               <li key={post._id}>
                 <Link
-                  href={`/blog/posts/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className="text-xl font-medium hover:underline"
                 >
                   {post.title}
