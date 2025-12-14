@@ -43,3 +43,14 @@ export const latestPostsQuery = `
     excerpt
   }
 `
+
+export const projectsQuery = `
+  *[_type == "project" && defined(slug.current)]
+  | order(_createdAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    summary,
+    coverImage
+  }
+`;
