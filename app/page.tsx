@@ -20,14 +20,14 @@ export default async function HomePage() {
     <main className="mx-auto max-w-6xl px-8">
       {/* HERO */}
       <section className="pt-24 pb-20">
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-          Hi, I’m Sumit.
-        </h1>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight text-zinc-900 dark:text-zinc-100">
+            Hi, I’m Sumit.
+          </h1>
 
-        <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-          I build software, think about systems, and write to clarify ideas.
-          This site is a collection of my work and notes.
-        </p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+            I build thoughtful software products and write about systems,
+            engineering, and long-term thinking.
+          </p>
 
         <div className="mt-10 flex gap-6 text-sm">
           <Link
