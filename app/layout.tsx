@@ -1,6 +1,7 @@
 import './globals.css'
 import Link from 'next/link'
 import ThemeToggle from "./components/theme-toggle";
+import MobileMenu from "./components/mobile-menu";
 
 export default function RootLayout({
   children,
