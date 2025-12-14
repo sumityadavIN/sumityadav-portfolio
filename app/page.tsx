@@ -120,22 +120,6 @@ export default async function HomePage() {
       <hr className="border-gray-200 dark:border-gray-800" />
 
       
-      {/* FOOTER CTA */}
-      <section className="pb-24 pt-10">
-        <p className="text-gray-600 dark:text-gray-400">
-          You can also find me exploring ideas through code and long-form
-          projects.
-        </p>
-
-        <div className="mt-4">
-          <Link
-            href="/projects"
-            className="underline underline-offset-4"
-          >
-            Explore projects →
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
