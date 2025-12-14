@@ -13,9 +13,9 @@ h1, h2, h3 {
 }
 
 hr {
-  @apply border-gray-200 dark:border-gray-800;
+  @apply border-zinc-200 dark:border-zinc-800;
 }
 
 .prose {
-  @apply prose-neutral dark:prose-invert;
+  @apply prose-zinc dark:prose-invert;
 }
