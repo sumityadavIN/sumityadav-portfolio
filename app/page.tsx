@@ -114,7 +114,9 @@ export default async function HomePage() {
             </a>
           </div>
         </section>
-
+      
+        {/* DIVIDER */}
+      <hr className="border-gray-200 dark:border-gray-800" />
       
         {/* DIVIDER */}
       <hr className="border-gray-200 dark:border-gray-800" />
