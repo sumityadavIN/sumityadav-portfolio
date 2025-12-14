@@ -1,5 +1,6 @@
 import './globals.css'
 import Link from 'next/link'
+import ThemeToggle from "./components/theme-toggle";
 
 export default function RootLayout({
   children,
