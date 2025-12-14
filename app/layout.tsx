@@ -61,12 +61,49 @@ export default function RootLayout({
           <main className="mx-auto max-w-4xl px-6">
             {children}
           </main>
-    <footer className="border-t border-zinc-200 dark:border-zinc-800">
-        <div className="mx-auto max-w-6xl px-8 py-10 flex items-center justify-between">
-          <span>© {new Date().getFullYear()} Sumit</span>
-          <ThemeToggle />
-        </div>
-    </footer>
+
+        
+<footer className="mt-24 border-t border-zinc-200 dark:border-zinc-800">
+  <div className="mx-auto max-w-6xl px-8 py-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+    {/* Left */}
+    <p className="text-sm text-zinc-500 dark:text-zinc-400">
+      © {new Date().getFullYear()} Sumit Yadav
+    </p>
+
+    {/* Right */}
+    <nav className="flex gap-4 text-sm font-medium">
+      <a
+        href="https://github.com/yourusername"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+      >
+        GitHub
+      </a>
+
+      <span className="text-zinc-400">·</span>
+
+      <a
+        href="https://linkedin.com/in/yourusername"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+      >
+        LinkedIn
+      </a>
+
+      <span className="text-zinc-400">·</span>
+
+      <a
+        href="mailto:youremail@example.com"
+        className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
+      >
+        Email
+      </a>
+    </nav>
+  </div>
+</footer>
+
 
 
         
