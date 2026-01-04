@@ -1,7 +1,39 @@
----
-layout: default
-title: Contact
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit Yadav - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="site-logo glass-circle">
+            S<span class="logo-dot">.</span>
+        </a>
+        <div class="nav-pill-wrap">
+            <nav class="nav-pill">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#work" class="nav-link">Projects</a>
+                <a href="index.html#about" class="nav-link">About</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <a href="contact.html" class="cta-btn red-pill">
+                Let's talk
+            </a>
+            <button id="mobile-toggle" class="red-pill" aria-label="Toggle menu" aria-expanded="false">
+                Menu
+            </button>
+        </div>
+    </header>
+
+    <nav id="mobile-menu" aria-hidden="true">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="index.html#work" class="mobile-link">Projects</a>
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </nav>
 
 <section id="contact" class="contact-section">
     <div class="contact-container">
@@ -39,3 +71,43 @@ title: Contact
 
     </div>
 </section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <h2 class="footer-heading">
+                <span class="footer-text-main">Got something</span><br>
+                <span class="footer-text-serif">worth my time?!</span>
+            </h2>
+            <a class="footer-btn-holla" href="contact.html">Reach Out</a>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <button class="footer-top-link" type="button">To top</button>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/sumityadav96" target="_blank" rel="noopener" class="footer-social-link">LinkedIn</a>
+                <span class="footer-separator">.</span>
+                <a href="https://github.com/sumityadavIN" target="_blank" rel="noopener" class="footer-social-link">GitHub</a>
+                <span class="footer-separator">.</span>
+                <a href="https://x.com/sumit_yadav_" target="_blank" rel="noopener" class="footer-social-link">X</a>
+                <span class="footer-separator">.</span>
+                <a href="mailto:contact@sumityadav.me" class="footer-social-link">Email</a>
+            </div>
+            <div class="footer-credits">
+                <span>&copy;2025 <a href="index.html">Sumit Yadav</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('mobile-menu');
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        menu.setAttribute('aria-hidden', expanded);
+    });
+</script>
+</body>
+</html>
