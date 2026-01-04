@@ -74,3 +74,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+document.getElementById('mobile-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('mobile-menu');
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        menu.setAttribute('aria-hidden', expanded);
+});
+

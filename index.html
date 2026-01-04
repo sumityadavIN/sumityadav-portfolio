@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumit Yadav - Home</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="media.css">    
+    <link rel="stylesheet" href="split-text.css">
 </head>
 <body>
     <header class="site-header">
@@ -152,13 +162,10 @@
     </div>
 </footer>
 
-<script>
-    document.getElementById('mobile-toggle').addEventListener('click', function() {
-        var menu = document.getElementById('mobile-menu');
-        var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
-        menu.setAttribute('aria-hidden', expanded);
-    });
-</script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/reveal.js"></script>
+    <script src="./assets/js/split-text.js"></script>
 </body>
 </html>
