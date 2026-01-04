@@ -1,0 +1,260 @@
+/* ========================================= */
+/* 1. HEADER CONTAINER                       */
+/* ========================================= */
+.site-header {
+    position: fixed;
+    top: 24px;
+    left: 0;
+    right: 0;
+    padding: 0 40px;
+    z-index: 3000;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* HIDDEN STATE (Applied by navbar.js) */
+.site-header.is-hidden {
+    opacity: 0; 
+    visibility: hidden;
+    
+    /* Fade out, but delay visibility hide so we see the fade */
+    transition: opacity 0.2s ease-in-out, visibility 0s linear 0.2s;
+}
+
+/* ========================================= */
+/* 2. LEFT: LOGO (Typography Version)        */
+/* ========================================= */
+.site-logo,
+.site-logo::before,
+.site-logo::after {
+    pointer-events: auto;
+}
+.site-logo::after {
+    pointer-events: none;
+}
+
+.site-logo {
+    width: 60px;
+    height: 60px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 1.45rem;
+    letter-spacing: -0.06em;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20, 20, 20, 0.45),
+            rgba(20, 20, 20, 0.25)
+        );
+
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+
+    z-index: 1001;
+    pointer-events: auto;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-logo:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.site-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image: url("/assets/noise.png");
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+/* The Red Dot */
+.logo-dot {
+    color: var(--brand-accent);
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-left: 1px;
+    transform: translateY(0.15em);
+    display: inline-block;
+}
+
+/* ========================================= */
+/* 3. CENTER: NAV PILL                       */
+/* ========================================= */
+.nav-pill-wrap {
+    pointer-events: auto;
+}
+
+.nav-pill {
+    height: 72px;
+    padding: 0 56px;
+
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(20, 20, 20, 0.45),
+            rgba(20, 20, 20, 0.25)
+        );
+
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow:
+        0 16px 44px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.nav-link {
+    font-family: "Host Grotesk", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--brand-white); 
+    opacity: 0.8;
+    transition: opacity 0.2s, color 0.2s; 
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+.nav-link:hover { 
+    opacity: 1;
+    color: var(--brand-accent); 
+}
+
+/* ========================================= */
+/* 4. RIGHT: ELEMENTS                        */
+/* ========================================= */
+.header-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    
+    /* ENABLE CLICKS for children */
+    pointer-events: auto;
+}
+
+.cta-btn {
+    pointer-events: auto; /* Double safety */
+    display: inline-flex;
+}
+
+#mobile-toggle {
+    position: relative;
+    z-index: 3100;
+    pointer-events: auto;
+    display: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#mobile-toggle svg, 
+#mobile-toggle i {
+    fill: currentColor;
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+}
+#mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    background: rgba(20, 20, 20, 0.55);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 0.25s;  
+}
+
+#mobile-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-link {
+    font-family: var(--font-main);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.mobile-link:hover {
+    color: var(--brand-accent);
+}
+
+
+
+/* ========================================= */
+/* 6. GLASS BASE                             */
+/* ========================================= */
+
+.glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.glass-circle {
+    composes: glass;
+}

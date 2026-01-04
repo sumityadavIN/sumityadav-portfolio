@@ -1,0 +1,139 @@
+/* ========================================= */
+/* MEDIA QUERIES                             */
+/* ========================================= */
+
+/* --- HEADER (Tablet/Mobile) --- */
+@media (max-width: 1028px) {
+    .site-header {
+        padding: 0 20px;
+        top: 20px;
+        display: flex; 
+        justify-content: space-between;
+    }
+
+    .nav-pill, .cta-btn {
+        display: none !important;
+    }
+
+    #mobile-toggle {
+        display: inline-flex !important;
+    }
+}
+
+/* --- GENERAL MOBILE (max-width: 900px) --- */
+@media (max-width: 900px) {
+    /* --- MAIN.CSS --- */
+    .hero-section {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: 100vh;
+    }
+    .hero-content {
+        padding: 60px 20px 60px;
+        order: 1;
+    }
+    .hero-image-wrapper {
+        height: 50vh;
+        order: -1;
+        display: block;
+    }
+
+    .philosophy-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 0;
+    }
+    .philosophy-container {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+        padding-bottom: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 40px;
+    }
+    .phil-heading {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
+    .work-section {
+        height: 150vh;
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    .work-text-wrapper {
+        height: 100%;
+        position: relative;
+        top: auto;
+        margin-top: 0;
+        padding: 0 20px;
+        color: #ffffff !important;
+        display: block;
+    }
+
+    .work-title,
+    .work-label {
+        position: sticky;
+        top: 0;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        z-index: 20;
+    }
+
+    .work-title {
+        margin-top: 15vh;
+        margin-bottom: 0;
+    }
+
+    .work-label {
+        margin-top: 5vh;
+        margin-bottom: 0;
+    }
+
+    /* Header & Footer Mobile Overrides */
+    header, footer {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    header {
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        overflow-x: hidden;
+    }
+    footer h1, footer h2, footer .footer-title {
+        font-size: clamp(2.5rem, 10vw, 4rem) !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    /* --- FOOTER.CSS --- */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-text-main {
+        justify-content: center;
+        font-size: clamp(2rem, 12vw, 5rem) !important;
+    }
+    .footer-links {
+        justify-content: center;
+    }
+    .footer-socials {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .footer-credits {
+        text-align: center;
+    }
+
+    /* --- CONTACT.CSS --- */
+    .contact-section { padding: 100px 20px; }
+    .form-input, .form-textarea, .form-label { font-size: 1.5rem; }
+}

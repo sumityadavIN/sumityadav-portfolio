@@ -1,0 +1,408 @@
+/* ========================================= */
+/* 0. THEME VARIABLES                        */
+/* ========================================= */
+:root {
+    --bg-color: #ffffff;       
+    --text-color: #050505;     
+    --text-muted: #555555;
+    --brand-accent: #FF0028;   
+    --brand-white: #ffffff;
+    
+    --scroll-thumb: #FF0028;
+    --scroll-track: #f0f0f0;
+
+    --font-main: 'Host Grotesk', 'Roboto', sans-serif;
+    --font-serif: 'Roboto Slab', serif; 
+    
+    --nav-height: 80px;
+}
+
+/* ========================================= */
+/* 1. GLOBAL RESETS & FONTS                  */
+/* ========================================= */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Sfizia';
+    src: url('../fonts/sfizia-italic.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+.text-sfizia {
+    font-family: 'Sfizia', serif;
+    font-weight: 400; 
+    font-style: italic;
+    font-size: 1.05em; 
+}
+
+/* CRITICAL STICKY FIX: Global Scroll Behavior */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    
+    /* CRITICAL: overflow must be visible for sticky to work */
+    /* We cannot hide x-overflow here, or sticky breaks */
+    overflow: visible !important; 
+    
+    height: auto !important;
+    
+    scrollbar-width: none;
+    /* scroll-behavior: smooth; REMOVED: Conflicts with JS Smooth Scroll (Lenis) */
+}
+html {
+    background-color: var(--bg-color);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* NEW: Handle horizontal overflow here instead of on body */
+.site-wrapper {
+    width: 100%;
+    /* FIXED: overflow-x: hidden creates a scroll container that breaks sticky. */
+    overflow: visible;
+    position: relative;
+}
+
+body {
+    background-color:  transparent;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.2;
+    padding-top: 0;
+    
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-wrap: pretty;
+}
+
+/* Ensure wrappers don't trap scroll */
+main, .site-content, #page-container {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+::selection {
+    background: var(--brand-accent);
+    color: #fff;
+}
+
+/* ========================================= */
+/* 2. COMPONENTS                             */
+/* ========================================= */
+.red-pill {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    padding: 0 28px;
+    border-radius: 999px;
+    background-color: var(--brand-accent);
+    color: var(--brand-white);
+    border: 1px solid var(--brand-accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.red-pill:hover {
+    background-color: transparent;
+    color: var(--brand-accent);
+}
+
+/* ========================================= */
+/* 2.1  INVERTED PILL COMPONENT              */
+/* ========================================= */
+.invert-pill {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px; /* Matched form height */
+    padding: 0 28px;
+    border-radius: 999px;
+    
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* INITIAL STATE: Transparent Body, Red Border, Red Text */
+    background-color: transparent;
+    color: var(--brand-accent);
+    border: 1px solid var(--brand-accent);
+}
+
+/* HOVER STATE: Red Body, White Text */
+.invert-pill:hover {
+    background-color: var(--brand-accent);
+    color: var(--brand-white);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 0, 40, 0.15);
+}
+
+/* ========================================= */
+/* 3. HERO SECTION                           */
+/* ========================================= */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; 
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8vw; 
+    padding-right: 4vw;
+    padding-top: 100px; 
+    height: 100%;
+}
+
+.hero-label {
+    font-family: var(--font-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-label::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--brand-accent);
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: clamp(3rem, 5vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.hero-desc {
+    font-family: var(--font-main);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 480px;
+    border-left: 2px solid #eee;
+    padding-left: 20px;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0; 
+}
+
+.hero-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #000000; 
+    display: block;
+}
+
+/* ========================================= */
+/* 4. PHILOSOPHY SECTION                     */
+/* ========================================= */
+.philosophy-section {
+    position: relative;
+    width: 100%;
+    background-color: rgb(220, 227, 231); 
+    color: rgb(51, 51, 51);
+    height: 100vh; /* Exact screen height */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Content starts from top */
+    overflow: hidden;
+    z-index: 2; /* Ensure it covers the fixed work bg */
+}
+
+
+.philosophy-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    
+    /* Layout: Left/Right Split */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    
+    /* Spacing: 3x Navbar Height from top */
+    padding-top: calc(var(--nav-height) * 3);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.phil-heading {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 5rem); 
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: #050505;
+}
+
+.phil-text {
+    font-family: var(--font-main);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--text-color);/*transparent; */
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.reveal-slide,
+.blurunblur {
+    position: relative;
+}
+
+.phil-char {
+    display: inline-block;
+    will-change: filter, opacity, transform;
+}
+
+.reveal-word {
+    display: inline-block;
+    opacity: 0.1;
+    color: rgb(51, 51, 51);
+    filter: blur(2px);
+    margin-right: 0.2em;
+    will-change: opacity, filter, transform;
+}
+
+.reveal-slide .reveal-word,
+.philosophy-section .reveal-word {
+    transform: translateY(40px);
+}
+
+.reveal-word.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, filter 0.1s ease-out;
+}
+
+/* ========================================= */
+/* 7. WORK SECTION (Fixed Window Effect)     */
+/* ========================================= */
+.work-section {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+    height: 150vh; /* Greatly increased height to ensure sticky duration */
+    display: block;
+    z-index: 1; /* Lower than Philosophy (2) so bg slides under */
+}
+
+/* Fixed Background Image */
+.work-bg-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0; /* Behind content, but managed by section z-index */
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.work-bg-fixed.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.work-img-fixed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Scrolling Text Overlay */
+.work-content {
+    position: relative;
+    height: 150vh;
+    z-index: 10;
+    pointer-events: none; /* Allows clicks to pass through to elements with pointer-events: auto */
+}
+.work-text-wrapper {
+    position: relative;
+    height: 100%;
+    
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 40px;
+    color: #ffffff;
+    pointer-events: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.work-title {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-top: 30vh;
+    font-size: clamp(4rem, 10vw, 7rem);
+    line-height: 0.9;
+}
+
+.work-label {
+    position: sticky;
+    top: calc(3lh + 1rem); /* Below title */
+    z-index: 1;
+    margin-top: 20vh;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+/* ========================================= */
+/* 8. PROJECTS SECTION                       */
+/* ========================================= */
+.projects-section {
+    position: relative;
+    z-index: 2; /* Higher than Work Section (1) to scroll over it */
+    background-color: var(--bg-color); /* Ensure it covers the fixed work bg */
+    width: 100%;
+}

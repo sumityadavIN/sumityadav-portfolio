@@ -1,0 +1,168 @@
+/* ========================================= */
+/* CONTACT SECTION (Floating Label & Brutalist) */
+/* ========================================= */
+
+.contact-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    padding: 160px 40px;
+    z-index: 10;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- HEADLINES --- */
+.contact-header {
+    margin-bottom: 100px;
+}
+
+.contact-title {
+    font-family: var(--font-main);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
+    color: var(--text-color);
+}
+
+.contact-desc {
+    font-family: var(--font-main);
+    font-size: 1.5rem; 
+    font-weight: 400;
+    color: var(--text-muted);
+    max-width: 600px;
+    line-height: 1.4;
+}
+
+/* --- THE FORM --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 20px; /* Space for the first label to float up */
+}
+
+.form-group {
+    position: relative;
+    /* Height must accommodate input + floating area */
+    height: 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align input to bottom */
+}
+
+/* --- INPUTS --- */
+.form-input, 
+.form-textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e5e5e5;
+    border-radius: 0;
+    
+    padding: 10px 0;
+    
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.5rem); 
+    color: var(--text-color);
+    
+    transition: border-color 0.3s ease;
+    
+    /* Ensure input sits on top of label for clicking */
+    position: relative; 
+    z-index: 2;
+}
+
+.form-textarea {
+    resize: none; 
+    /* Adjust height for textarea specifically */
+    min-height: 50px; 
+}
+
+/* Hide default placeholder so our label can act as one */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Focus State */
+.form-input:focus, 
+.form-textarea:focus {
+    outline: none;
+    border-bottom-color: var(--brand-accent);
+}
+
+/* --- FLOATING LABEL --- */
+.form-label {
+    font-family: var(--font-main);
+    color: #999; /* Grey placeholder color */
+    
+    /* Position Absolute to overlay the input */
+    position: absolute;
+    top: 20px; /* Vertically center inside input initially */
+    left: 0;
+    z-index: 1;
+    
+    font-size: clamp(1.8rem, 3vw, 2.5rem); /* Same size as input initially */
+    font-weight: 500;
+    
+    transition: 0.3s ease all;
+    pointer-events: none; /* Click goes through to input */
+    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* The Red Dot (Hidden initially) */
+.form-label::before {
+    content: '';
+    display: block;
+    width: 0px; /* Start hidden */
+    height: 0px;
+    background-color: var(--brand-accent);
+    border-radius: 50%;
+    transition: 0.3s ease all;
+    opacity: 0;
+}
+
+/* --- ANIMATION LOGIC --- */
+/* When Input has Focus OR has Value (placeholder-shown trick) */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label,
+.form-textarea:focus + .form-label,
+.form-textarea:not(:placeholder-shown) + .form-label {
+    
+    /* Move Up */
+    top: -24px;
+    
+    /* Resize Text to Label Style */
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color); /* Turn Black */
+}
+
+/* Show the Red Dot when active */
+.form-input:focus + .form-label::before,
+.form-input:not(:placeholder-shown) + .form-label::before,
+.form-textarea:focus + .form-label::before,
+.form-textarea:not(:placeholder-shown) + .form-label::before {
+    width: 8px;
+    height: 8px;
+    opacity: 1;
+}
+
+/* --- FORM FOOTER --- */
+.form-footer {
+    margin-top: 40px;
+}
