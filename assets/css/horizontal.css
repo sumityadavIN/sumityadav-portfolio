@@ -1,0 +1,484 @@
+/* ========================================= */
+/* 1. GLOBAL RESETS & STICKY FIXES           */
+/* ========================================= */
+html,
+body {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    background-color: #050505;
+}
+
+/* Ensure no wrapper traps the scroll */
+.site-wrapper {
+    overflow: visible !important;
+}
+
+/* ========================================= */
+/* 2. PROJECT HERO (The "Scroll To" Space)   */
+/* ========================================= */
+.project-hero {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    background-color: #050505;
+}
+
+.project-hero-content {
+    text-align: center;
+    animation: fadeUp 1s ease-out;
+}
+
+.project-title {
+    font-family: var(--font-main, sans-serif);
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    margin: 0 0 20px 0;
+    color: #ffffff;
+}
+
+.project-subtitle {
+    font-family: var(--font-main, sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--brand-accent, #FF0028);
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ========================================= */
+/* 3. LANDO-STYLE SCATTERED GRID             */
+/* ========================================= */
+
+.horizontal-section {
+    position: relative;
+    width: 100%;
+    background-color: #050505;
+    transition: background-color 0.1s linear;
+    height: 400vh;
+    /* Scroll Speed */
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+/* The Container */
+.timeline-container {
+    display: flex;
+    /* Negative gap allows overlapping if margins are adjusted */
+    gap: 4vw;
+    padding-left: 15vw;
+    padding-right: 2vh;
+    height: 100vh;
+    width: max-content;
+    align-items: center;
+    will-change: transform;
+}
+
+/* Fix for the last item ("What's Next") being too wide */
+.timeline-container .grid-item:last-child {
+    width: auto !important;
+    min-width: 0 !important;
+    padding-right: 0;
+}
+
+/* 4. GRID ITEMS & GROUPS */
+.grid-item {
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.grid-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 10vh;
+    margin: 0 2vw;
+}
+
+.grid-group.narrow-gap {
+    gap: 5vh;
+}
+
+/* 5. SIZES */
+.size-s {
+    width: 18vw;
+    min-width: 220px;
+    max-width: 300px;
+}
+
+.size-m {
+    width: 25vw;
+    min-width: 300px;
+}
+
+.size-l {
+    width: 35vh;
+    min-width: 350px;
+}
+
+.size-xl {
+    width: 55vw;
+    min-width: 600px;
+    z-index: 2;
+}
+
+/* 6. POSITIONING (Offsets) */
+.pos-top-extreme {
+    transform: translateY(-35vh);
+}
+
+.pos-top {
+    transform: translateY(-20vh);
+}
+
+.pos-top-mid {
+    transform: translateY(-15vh);
+}
+
+.pos-top-right {
+    transform: translateY(-25vh) translateX(5vw);
+}
+
+.pos-bottom {
+    transform: translateY(20vh);
+}
+
+.pos-bottom-left {
+    transform: translateY(30vh) translateX(-2vw);
+}
+
+.align-center {
+    transform: translateY(0);
+}
+
+/* 7. VISUALS (Polaroids & Text) */
+.polaroid {
+    position: relative;
+    width: 100%;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+    filter: grayscale(15%) contrast(110%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.meta-label {
+    display: block;
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #888;
+    margin-top: 12px;
+}
+
+.meta-label.on-image {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: #fff;
+    mix-blend-mode: difference;
+}
+
+.grid-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 4rem;
+    line-height: 0.9;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.grid-desc {
+    font-family: var(--font-main);
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.quote-text {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: #fff;
+    text-align: center;
+}
+
+.signature {
+    width: 120px;
+    opacity: 0.8;
+    margin-top: 20px;
+    filter: invert(1);
+}
+
+/* ========================================= */
+/* 9. SPLIT SCROLL SECTION (Merged from split.css) */
+/* ========================================= */
+
+.split-section {
+    /* Sticky ensures it freezes on screen */
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    /* CHANGED: 110vh for that smooth buffer */
+    height: 300vh;
+
+    background-color: #3a0005;
+    /* Matching grid end color */
+    z-index: 5;
+    /* Lower than footer (20) */
+
+    will-change: transform;
+}
+
+.split-sticky-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Content remains viewport height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- THE PANELS --- */
+.split-panel {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    will-change: transform;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-color: #3a0005;
+    /* Matching grid end color (was #0a0a0a) */
+}
+
+.panel-left {
+    left: 0;
+    align-items: flex-end;
+    text-align: right;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%);
+}
+
+.panel-right {
+    right: 0;
+    align-items: flex-start;
+    text-align: left;
+    transform: translateX(50%);
+}
+
+/* --- CONTENT --- */
+.panel-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 6vw;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.panel-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.split-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    /* User requested no transparency */
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.split-panel:hover .split-bg {
+    transform: scale(1.05);
+    /* Removed opacity change */
+}
+
+/* TYPOGRAPHY */
+.split-title {
+    font-family: var(--font-main, sans-serif);
+    font-weight: 800;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.split-desc {
+    font-family: var(--font-main, sans-serif);
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.split-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--brand-accent, #FF0028);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ========================================= */
+/* 10. MOBILE FALLBACK                       */
+/* ========================================= */
+@media (max-width: 900px) {
+
+    /* --- Horizontal Section Mobile --- */
+    .horizontal-section {
+        height: auto;
+    }
+
+    .sticky-wrapper {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    .timeline-container {
+        width: 100%;
+        flex-direction: column;
+        transform: none !important;
+        padding: 60px 20px;
+        gap: 80px;
+        height: auto;
+    }
+
+    /* Reset all transforms and widths */
+    .grid-item,
+    .size-s,
+    .size-m,
+    .size-l,
+    .size-xl {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        transform: none !important;
+    }
+
+    .grid-group {
+        gap: 40px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .project-hero {
+        height: 70vh;
+    }
+
+    .meta-label.on-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-top: 10px;
+        color: #888;
+        mix-blend-mode: normal;
+    }
+
+    /* --- Split Section Mobile --- */
+    /* --- Split Section Mobile (Merged) --- */
+    .split-section {
+        position: relative;
+        /* Disable sticky */
+        height: auto;
+    }
+
+    .split-sticky-wrapper {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .split-panel {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        transform: none !important;
+        left: auto;
+        right: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        align-items: center;
+        text-align: center;
+    }
+
+    .panel-content {
+        padding: 20px;
+        opacity: 1;
+        transform: none;
+    }
+
+    .split-btn {
+        margin: 0 auto;
+    }
+}
