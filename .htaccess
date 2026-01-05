@@ -1,0 +1,8 @@
+# Enable JavaScript modules MIME type
+AddType application/javascript .js
+AddType text/javascript .js
+
+# Enable CORS for local development
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
